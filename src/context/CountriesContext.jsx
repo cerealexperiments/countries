@@ -6,9 +6,9 @@ const CountriesContext = createContext();
 export const CountriesProvider = ({ children }) => {
   const [countries, setCountries] = useState([]);
   const [shownCountries, setShownCountries] = useState([]);
+  const regions = ["Europe", "Americas", "Africa", "Asia", "Oceania"];
   useEffect(() => {
     axios.get("https://restcountries.com/v3.1/all").then((response) => {
-      console.log(response.data);
       setCountries(response.data);
       setShownCountries(response.data);
     });
@@ -20,6 +20,7 @@ export const CountriesProvider = ({ children }) => {
         countries,
         shownCountries,
         setShownCountries,
+        regions,
       }}
     >
       {children}

@@ -1,7 +1,6 @@
 import CountryList from "./components/CountryList";
 import Header from "./components/Header";
-import RegionFilter from "./components/RegionFilter";
-import SearchFilter from "./components/SearchFilter";
+import Filters from "./components/Filters";
 import { CountriesProvider } from "./context/CountriesContext";
 
 function App() {
@@ -10,8 +9,7 @@ function App() {
       <div className="container mx-auto mt-4 px-8 flex flex-col">
         <CountriesProvider>
           <Header />
-          <SearchFilter />
-          <RegionFilter />
+          <Filters />
           <CountryList />
         </CountriesProvider>
       </div>
