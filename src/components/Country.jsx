@@ -4,7 +4,7 @@ const Country = ({ country }) => {
   return (
     <div className="flex flex-col items-start shadow-md shadow-slate-400 max-w-[320px] min-h-[401px] max-h-[420px]">
       <img
-        className="object-cover h-[213px] self-center w-[320px]"
+        className="object-fill h-[213px] self-center w-[320px]"
         src={country.flags.png}
         alt=""
       />

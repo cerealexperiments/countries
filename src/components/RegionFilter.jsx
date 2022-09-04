@@ -3,19 +3,8 @@ import { useContext, useState } from "react";
 import CountriesContext from "../context/CountriesContext";
 
 const RegionFilter = () => {
-  const { regions, setShownCountries } = useContext(CountriesContext);
-  const [selectedRegion, setSelectedRegion] = useState("");
-  console.log(selectedRegion);
-  useEffect(() => {
-    setShownCountries((prev) => {
-      if (selectedRegion === "") {
-        return prev;
-      }
-      return prev.filter((country) => {
-        return country.region === selectedRegion;
-      });
-    });
-  }, [selectedRegion]);
+  const { selectedRegion, setSelectedRegion, regions } =
+    useContext(CountriesContext);
   return (
     <select
       onChange={async (e) => {

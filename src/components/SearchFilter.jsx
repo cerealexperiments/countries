@@ -4,21 +4,10 @@ import { useState, useContext } from "react";
 import CountriesContext from "../context/CountriesContext";
 
 const SearchFilter = () => {
-  const [filterValue, setFilterValue] = useState("");
-  console.log(filterValue);
-  const { countries, setShownCountries } = useContext(CountriesContext);
+  const { filterValue, setFilterValue } = useContext(CountriesContext);
   const handleChange = (e) => {
     setFilterValue(e.target.value);
   };
-  useEffect(() => {
-    setShownCountries(
-      countries.filter((country) => {
-        return country.name.common
-          .toLowerCase()
-          .includes(filterValue.toLowerCase());
-      })
-    );
-  }, [filterValue]);
   return (
     <form
       onSubmit={(e) => e.preventDefault()}
